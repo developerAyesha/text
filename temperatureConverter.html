@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height:100vh;
+            display: grid;
+            place-items: center;
+            background-color: azure;
+        }
+        form{
+            background-color: brown;
+            padding: 20px;
+        }
+        #result
+        {
+            font-size: 20px;
+            color: rgb(147, 126, 185);
+            padding:10px;
+            margin:4px;
+        }
+    </style>
+</head>
+<body>
+    <form id="TempCal" onsubmit="CalculateTemp()"; >
+
+    <label for="temp">Enter temperature you h'd like to convert</label>
+    <br>
+    <input type="number" name="temp" id="temp" >
+    <select name="Temp_diff" id="Temp_diff">
+        <option value="cel">Celcius</option>
+        <option value="fah">Fahrenheit</option>
+
+    </select>
+    <br>
+    <input type="submit" name="temp">
+    <br>
+    <p id="result"></p>
+    </form>
+      
+    
+    <script>
+
+     const CalculateTemp = ()=>
+     {
+        let Number=document.getElementById('temp').value;
+       // console.log(Number);
+       const selectedindex=document.getElementById('Temp_diff');
+       let valueTemp=Temp_diff.options[selectedindex.selectedIndex].value;
+       let resultt;
+       const celtoFar=(cel)=>
+       {
+        let farenheight=((cel*9/5)+32);
+        return farenheight;
+       }
+       if(valueTemp=='cel')
+       {
+        resultt=celtoFar(Number);
+        document.getElementById('result').innerHTML=resultt;
+       }
+       
+     }
+
+    </script>
+</body>
+</html>

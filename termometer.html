@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Document</title>
+    <style>
+
+        .therm
+        {
+            height:240px;
+            width:200px;
+            font-size: 500px;
+            padding:20px;
+            margin:50px;
+          
+        }
+        body{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <h1 style="color:azure">       THERMOMETER      <span id="iconContainer" class ="therm" > </span></h1>
+  
+</div>
+
+    <script>
+
+        setInterval(addIcon, 5000);
+
+        function addIcon() {
+            // Find the container element
+            
+            setTimeout(()=>
+            {
+                const iconContainer = document.getElementById("iconContainer");
+                iconContainer.style.color ="yellow";
+
+                   // Set the innerHTML to the Font Awesome icon class
+               iconContainer.innerHTML = '<i class="fas fa-thermometer-empty"></i>';
+
+            },1000)
+            setTimeout(()=>
+            {
+                const iconContainer = document.getElementById("iconContainer");
+
+                   // Set the innerHTML to the Font Awesome icon class
+               iconContainer.innerHTML = '<i class="fas fa-thermometer-1"></i>';
+
+
+            },2000)
+            setTimeout(()=>
+            {
+                const iconContainer = document.getElementById("iconContainer");
+
+                   // Set the innerHTML to the Font Awesome icon class
+               iconContainer.innerHTML = '<i class="fas fa-thermometer-2"></i>';
+               
+
+            },3000)
+            setTimeout(()=>
+            {
+                const iconContainer = document.getElementById("iconContainer");
+                iconContainer.style.color ="red"
+                   // Set the innerHTML to the Font Awesome icon class
+               iconContainer.innerHTML = '<i class="fas fa-thermometer-3"></i>';
+               
+
+            },4000)
+        }
+
+        addIcon();
+    </script>
+</body>
+</html>
